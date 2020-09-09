@@ -1,0 +1,21 @@
+{
+  "name": "social_working",
+  "description": "",
+  "main": "",
+  "authors": [
+    "LinhHoang1110 <43548369+LinhHoang1110@users.noreply.github.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/LinhHoang1110/social_working_php_oe28",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "demo-bower": "https://github.com/LinhHoang1110/demo_bower.git"
+  }
+}
