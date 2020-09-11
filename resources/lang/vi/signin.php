@@ -8,4 +8,8 @@ return [
     'user' => 'Người dùng',
     'company' => 'Công ty',
     'get_started' => 'Bắt đầu',
+    'social_working' => 'Mạng xã hội việc làm',
+    'password' => 'Mật khẩu',
+    'email' => 'Email',
+    'repeat_password' => 'Đặt lại mật khẩu',
 ];

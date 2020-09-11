@@ -8,4 +8,8 @@ return [
     'user' => 'User',
     'company' => 'Company',
     'get_started' => 'Get Started',
+    'social_working' => 'Social Working',
+    'password' => 'Password',
+    'email' => 'Email',
+    'repeat_password' => 'Repeat password',
 ];
