@@ -12,4 +12,5 @@ return [
     'password' => 'Mật khẩu',
     'email' => 'Email',
     'repeat_password' => 'Đặt lại mật khẩu',
+    'user_name' => 'Tên hiển thị',
 ];

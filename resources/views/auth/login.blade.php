@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>WorkWise Html Template</title>
+    <title>{{ trans('signin.social_working') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -41,7 +40,7 @@
                         <div class="login-sec">
                             <ul class="sign-control">
                                 <li data-tab="tab-1" class="current"><a href="#" title="">{{ trans('signin.sign_in') }}</a></li>
-                                <li data-tab="tab-2"><a href="#" title="">{{ trans('signin.sign_up') }}</a></li>
+                                <li data-tab="tab-2"><a href="" title="">{{ trans('signin.sign_up') }}</a></li>
                             </ul>
                             <div class="sign_in_sec current" id="tab-1">
 
@@ -100,6 +99,7 @@
                                     </div>
                                 </form>
                             </div>
+
                             <div class="sign_in_sec" id="tab-2">
                                 <div class="signup-tab">
                                     <i class="fa fa-long-arrow-left"></i>
@@ -110,54 +110,97 @@
                                     </ul>
                                 </div>
                                 <div class="dff-tab current" id="tab-3">
-                                    <form>
+                                    <form method="POST" action="{{ route('register') }}">
+                                        @csrf
+
                                         <div class="row">
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="email" name="email" placeholder="{{ trans('signin.email') }}">
+                                                    <input
+                                                        id="name"
+                                                        type="text"
+                                                        class="form-control @error ('name') is-invalid @enderror"
+                                                        name="name"
+                                                        value="{{ old('name') }}"
+                                                        required
+                                                        autocomplete="name"
+                                                        autofocus
+                                                        placeholder="{{ trans('signin.user_name') }}"
+                                                    >
                                                     <i class="la la-user"></i>
+                                                    @error ('name')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                             </div>
 
-                                            </div>
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="password" name="password" placeholder="{{ trans('signin.password') }}">
-                                                    <i class="la la-lock"></i>
+                                                    <input
+                                                        id="email"
+                                                        type="email"
+                                                        class="form-control @error ('email') is-invalid @enderror"
+                                                        name="email" value="{{ old('email') }}"
+                                                        required
+                                                        autocomplete="email"
+                                                        placeholder="{{ trans('signin.email') }}"
+                                                    >
+                                                    <i class="la la-user"></i>
+                                                    @error ('email')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                             </div>
+
                                             <div class="col-lg-12 no-pdd">
                                                 <div class="sn-field">
-                                                    <input type="password" name="repeat-password" placeholder="{{ trans('signin.repeat_password') }}">
+                                                    <input
+                                                        id="password"
+                                                        type="password"
+                                                        class="form-control @error ('password') is-invalid @enderror"
+                                                        name="password"
+                                                        value=""
+                                                        required
+                                                        autocomplete="new-password"
+                                                        placeholder="{{ trans('signin.password') }}"
+                                                    >
+                                                    <i class="la la-lock"></i>
+                                                    @error ('password')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input
+                                                        id="password-confirm"
+                                                        type="password"
+                                                        class="form-control"
+                                                        name="password_confirmation"
+                                                        required
+                                                        autocomplete="new-password"
+                                                        placeholder="{{ trans('signin.repeat_password') }}"
+                                                    >
                                                     <i class="la la-lock"></i>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 no-pdd">
                                                 <button type="submit" value="submit">{{ trans('signin.get_started') }}</button>
                                             </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="footy-sec">
-            <div class="container">
-                <ul>
-                    <li><a href="help-center.html" title="">Help Center</a></li>
-                    <li><a href="about.html" title="">About</a></li>
-                    <li><a href="#" title="">Privacy Policy</a></li>
-                    <li><a href="#" title="">Community Guidelines</a></li>
-                    <li><a href="#" title="">Cookies Policy</a></li>
-                    <li><a href="#" title="">Career</a></li>
-                    <li><a href="forum.html" title="">Forum</a></li>
-                    <li><a href="#" title="">Language</a></li>
-                    <li><a href="#" title="">Copyright Policy</a></li>
-                </ul>
-                <p><img src="{{ config('images.copy_icon') }}"
-                        alt="">Copyright 2019</p>
             </div>
         </div>
     </div>
