@@ -29,7 +29,7 @@
                 <div class="container">
                     <div class="header-data">
                         <div class="logo">
-                            <a href="index.html" title=""><img src="/bower_components/demo-bower/assets/images/logo.png" alt=""></a>
+                            <a href="" title=""><img src="{{ config('icon.logo') }}" alt=""></a>
                         </div>
                         <div class="search-bar">
                             <form>
@@ -40,141 +40,128 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="index.html" title="">
-                                        <span><img src="/bower_components/demo-bower/assets/images/icon1.png" alt=""></span>
-                                        Home
+                                    <a href="" title="">
+                                        <span><img src="{{ config('icon.icon1') }}" alt=""></span>
+                                        {{ trans('navbar.home') }}
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="companies.html" title="">
-                                        <span><img src="/bower_components/demo-bower/assets/images/icon2.png" alt=""></span>
-                                        Companies
+                                    <a href="" title="">
+                                        <span><img src="{{ config('icon.icon2') }}" alt=""></span>
+                                        {{ trans('navbar.companies') }}
                                     </a>
                                     <ul>
-                                        <li><a href="companies.html" title="">Companies</a></li>
-                                        <li><a href="company-profile.html" title="">Company Profile</a></li>
+                                        <li><a href="" title="">{{ trans('navbar.companies') }}</a></li>
+                                        <li><a href="" title="">{{ trans('navbar.company_profile') }}</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="projects.html" title="">
-                                        <span><img src="/bower_components/demo-bower/assets/images/icon3.png" alt=""></span>
-                                        Projects
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="profiles.html" title="">
-                                        <span><img src="/bower_components/demo-bower/assets/images/icon4.png" alt=""></span>
-                                        Profiles
+                                    <a href="" title="">
+                                        <span><img src="{{ config('icon.icon4') }}" alt=""></span>
+                                        {{ trans('navbar.profiles') }}
                                     </a>
                                     <ul>
-                                        <li><a href="user-profile.html" title="">User Profile</a></li>
-                                        <li><a href="my-profile-feed.html" title="">my-profile-feed</a></li>
+                                        <li><a href="" title="">{{ trans('navbar.user_profile') }}</a></li>
+                                        <li><a href="" title="">{{ trans('navbar.my_profile_feed') }}</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="jobs.html" title="">
-                                        <span><img src="/bower_components/demo-bower/assets/images/icon5.png" alt=""></span>
-                                        Jobs
+                                    <a href="" title="">
+                                        <span><img src="{{ config('icon.icon5') }}" alt=""></span>
+                                        {{ trans('navbar.jobs') }}
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" title="" class="not-box-openm">
-                                        <span><img src="/bower_components/demo-bower/assets/images/icon6.png" alt=""></span>
-                                        Messages
+                                        <span><img src="{{ config('icon.icon6') }}" alt=""></span>
+                                        {{ trans('navbar.messages') }}
                                     </a>
                                     <div class="notification-box msg" id="message">
                                         <div class="nt-title">
-                                            <h4>Setting</h4>
-                                            <a href="#" title="">Clear all</a>
+                                            <h4>{{ trans('navbar.settings') }}</h4>
                                         </div>
                                         <div class="nott-list">
                                             <div class="notfication-details">
                                                 <div class="noty-user-img">
-                                                    <img src="/bower_components/demo-bower/assets/images/resources/ny-img1.png" alt="">
+                                                    <img src="{{ config('images.ny_img1') }}" alt="">
                                                 </div>
                                                 <div class="notification-info">
-                                                    <h3><a href="messages.html" title="">Jassica William</a> </h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
-                                                    <span>2 min ago</span>
+                                                    <h3><a href="" title="">{{ trans('') }}</a> </h3>
                                                 </div>
                                             </div>
                                             <div class="notfication-details">
                                                 <div class="noty-user-img">
-                                                    <img src="/bower_components/demo-bower/assets/images/resources/ny-img2.png" alt="">
+                                                    <img src="{{ config('images.ny_img2') }}" alt="">
                                                 </div>
                                                 <div class="notification-info">
-                                                    <h3><a href="messages.html" title="">Jassica William</a></h3>
-                                                    <p>Lorem ipsum dolor sit amet.</p>
-                                                    <span>2 min ago</span>
+                                                    <h3><a href="" title="">{{ trans('') }}</a></h3>
+
                                                 </div>
                                             </div>
                                             <div class="notfication-details">
                                                 <div class="noty-user-img">
-                                                    <img src="/bower_components/demo-bower/assets/images/resources/ny-img3.png" alt="">
+                                                    <img src="{{ config('images.ny_img3') }}" alt="">
                                                 </div>
                                                 <div class="notification-info">
-                                                    <h3><a href="messages.html" title="">Jassica William</a></h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                        sed do eiusmod tempo incididunt ut labore et dolore magna aliqua.
-                                                    </p>
-                                                    <span>2 min ago</span>
+                                                    <h3><a href="" title="">{{ trans('') }}</a></h3>
+
                                                 </div>
                                             </div>
                                             <div class="view-all-nots">
-                                                <a href="messages.html" title="">View All Messsages</a>
+                                                <a href="" title="">{{ trans('') }}</a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
                                     <a href="#" title="" class="not-box-open">
-                                        <span><img src="/bower_components/demo-bower/assets/images/icon7.png" alt=""></span>
-                                        Notification
+                                        <span><img src="{{ config('icon.icon7') }}" alt=""></span>
+                                       {{ trans('navbar.settings') }}
                                     </a>
                                     <div class="notification-box noti" id="notification">
                                         <div class="nt-title">
-                                            <h4>Setting</h4>
-                                            <a href="#" title="">Clear all</a>
+                                            <h4>{{ trans('') }}</h4>
+                                            <a href="#" title="">{{ trans('') }}</a>
                                         </div>
                                         <div class="nott-list">
                                             <div class="notfication-details">
                                                 <div class="noty-user-img">
-                                                    <img src="/bower_components/demo-bower/assets/images/resources/ny-img1.png" alt="">
+                                                    <img src="{{ config('images.ny_img1') }}" alt="">
                                                 </div>
                                                 <div class="notification-info">
-                                                    <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
-                                                    <span>2 min ago</span>
+                                                    <h3><a href="#" title="">{{ trans('') }}</a> {{ trans('') }}</h3>
+                                                    <span>{{ trans('') }}</span>
                                                 </div>
                                             </div>
                                             <div class="notfication-details">
                                                 <div class="noty-user-img">
-                                                    <img src="/bower_components/demo-bower/assets/images/resources/ny-img2.png" alt="">
+                                                    <img src="{{ config('images.ny_img2') }}" alt="">
                                                 </div>
                                                 <div class="notification-info">
-                                                    <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
-                                                    <span>2 min ago</span>
+                                                    <h3><a href="#" title="">{{ trans('') }}</a> {{ trans('') }}</h3>
+                                                    <span>{{ trans('') }}</span>
                                                 </div>
                                             </div>
                                             <div class="notfication-details">
                                                 <div class="noty-user-img">
-                                                    <img src="/bower_components/demo-bower/assets/images/resources/ny-img3.png" alt="">
+                                                    <img src="{{ config('images.ny_img3') }}" alt="">
                                                 </div>
                                                 <div class="notification-info">
-                                                    <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
-                                                    <span>2 min ago</span>
+                                                    <h3><a href="#" title="">{{ trans('') }}</a> {{ trans('') }}</h3>
+                                                    <span>{{ trans('') }}</span>
                                                 </div>
                                             </div>
                                             <div class="notfication-details">
                                                 <div class="noty-user-img">
-                                                    <img src="/bower_components/demo-bower/assets/images/resources/ny-img2.png" alt="">
+                                                    <img src="{{ config('images.ny_img2') }}" alt="">
                                                 </div>
                                                 <div class="notification-info">
-                                                    <h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
-                                                    <span>2 min ago</span>
+                                                    <h3><a href="#" title="">{{ trans('') }}</a> {{ trans('') }}</h3>
+                                                    <span>{{ trans('') }}</span>
                                                 </div>
                                             </div>
                                             <div class="view-all-nots">
-                                                <a href="#" title="">View All Notification</a>
+                                                <a href="#" title="">{{ trans('') }}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -186,26 +173,18 @@
                         </div>
                         <div class="user-account">
                             <div class="user-info">
-                                <div class="d-flex">
                                     @guest
                                         <div class="not-box-openm">
                                             <a class="nav-link" href="{{ route('login') }}">{{ trans('navbar.login')}}</a>
                                         </div>
-                                        @if (Route::has('register'))
-                                            <div class="not-box-openm">
-                                                <a class="nav-link" href="{{ route('register') }}">{{ trans('navbar.register') }}</a>
-                                            </div>
-                                        @endif
                                     @else
-                                </div>
-
                                 @auth
-                                <img src="/bower_components/demo-bower/assets/images/resources/user.png" alt="">
+                                <img src="{{ config('images.user') }}" alt="">
                                 <a href="#" title="">
 
                                     {{ Auth::user()->name }}
                                     @else
-                                        <button>Signin</button>
+                                        <button>{{ trans('sigin.sigin') }}</button>
                                 @endauth
                                 </a>
                                 <i class="la la-sort-down"></i>

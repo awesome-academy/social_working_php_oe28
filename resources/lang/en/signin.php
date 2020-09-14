@@ -12,4 +12,5 @@ return [
     'password' => 'Password',
     'email' => 'Email',
     'repeat_password' => 'Repeat password',
+    'user_name' => 'User name',
 ];
