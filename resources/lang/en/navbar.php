@@ -12,4 +12,5 @@ return [
     'jobs' => 'Jobs',
     'messages' => 'Messages',
     'settings' => 'Settings',
+    'search' => 'Search',
 ];

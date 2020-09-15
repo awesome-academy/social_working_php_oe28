@@ -7,19 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/css/flatpickr.min.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/css/line-awesome.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/css/line-awesome-font-awesome.min.css">
-    <link href="/bower_components/demo-bower/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/lib/slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/lib/slick/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/bower_components/demo-bower/assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/flatpickr.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/line-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/line-awesome-font-awesome.min.css') }}">
+    <link href="{{ asset('bower_components/demo-bower/assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/lib/slick/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/lib/slick/slick-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/aos/dist/aos.css') }}">
     <title>Document</title>
 </head>
 <body oncontextmenu="return false;" >
@@ -33,7 +32,7 @@
                         </div>
                         <div class="search-bar">
                             <form>
-                                <input type="text" name="search" placeholder="Search...">
+                                <input type="text" name="search" placeholder="{{ trans('navbar.search') }}...">
                                 <button type="submit"><i class="la la-search"></i></button>
                             </form>
                         </div>
@@ -116,7 +115,7 @@
                                 <li>
                                     <a href="#" title="" class="not-box-open">
                                         <span><img src="{{ config('icon.icon7') }}" alt=""></span>
-                                       {{ trans('navbar.settings') }}
+                                        {{ trans('navbar.settings') }}
                                     </a>
                                     <div class="notification-box noti" id="notification">
                                         <div class="nt-title">
@@ -173,26 +172,26 @@
                         </div>
                         <div class="user-account">
                             <div class="user-info">
-                                    @guest
-                                        <div class="not-box-openm">
-                                            <a class="nav-link" href="{{ route('login') }}">{{ trans('navbar.login')}}</a>
-                                        </div>
-                                    @else
-                                @auth
-                                <img src="{{ config('images.user') }}" alt="">
-                                <a href="#" title="">
+                                @guest
+                                    <div class="not-box-openm">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ trans('navbar.login')}}</a>
+                                    </div>
+                                @else
+                                    @auth
+                                        <img src="{{ config('images.user') }}" alt="">
+                                        <a href="#" title="">
 
-                                    {{ Auth::user()->name }}
-                                    @else
-                                        <button>{{ trans('sigin.sigin') }}</button>
-                                @endauth
-                                </a>
-                                <i class="la la-sort-down"></i>
+                                            {{ Auth::user()->name }}
+                                            @else
+                                                <button>{{ trans('sigin.sigin') }}</button>
+                                            @endauth
+                                        </a>
+                                        <i class="la la-sort-down"></i>
                             </div>
                             <div class="user-account-settingss">
                                 <h3 class="tc">
                                     <a id="btn-logout"
-                                        class="dropdown-item" href="#">
+                                       class="dropdown-item" href="#">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -211,16 +210,14 @@
             </main>
         </div>
     </div>
-    <script type="text/javascript" src="/bower_components/demo-bower/assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/bower_components/demo-bower/assets/js/popper.js"></script>
-    <script type="text/javascript" src="/bower_components/demo-bower/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/bower_components/demo-bower/assets/js/flatpickr.min.js"></script>
-    <script type="text/javascript" src="/bower_components/demo-bower/assets/lib/slick/slick.min.js"></script>
-    <script type="text/javascript" src="/bower_components/demo-bower/assets/js/script.js"></script>
-    <script>
-        document.querySelector('#btn-logout').onclick = function () {
-            document.querySelector('#logout-form').submit();
-        }
-    </script>
+
+<script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/popper.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/flatpickr.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/lib/slick/slick.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/script.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/aos/dist/aos.js') }}"></script>
+<script src="{{ asset('/js/home.js') }}"></script>
 </body>
 </html>
