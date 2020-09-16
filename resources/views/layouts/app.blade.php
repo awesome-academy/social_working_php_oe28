@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/aos/dist/aos.css') }}">
-    <title>Document</title>
+    <title></title>
 </head>
 <body oncontextmenu="return false;" >
     <div id="">
@@ -32,9 +32,10 @@
                         </div>
                         <div class="search-bar">
                             <form>
-                                <input type="text" name="search" placeholder="{{ trans('navbar.search') }}...">
+                                <input id="inputSearchCompany" type="text" name="search" placeholder="{{ trans('navbar.search') }}...">
                                 <button type="submit"><i class="la la-search"></i></button>
                             </form>
+                            <div id="resultSearch"></div>
                         </div>
                         <nav>
                             <ul>
@@ -210,7 +211,6 @@
             </main>
         </div>
     </div>
-
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/popper.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/bootstrap.min.js') }}"></script>
@@ -218,6 +218,6 @@
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/lib/slick/slick.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/script.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/aos/dist/aos.js') }}"></script>
-<script src="{{ asset('/js/home.js') }}"></script>
+<script src="{{ asset('js/home.js') }}"></script>
 </body>
 </html>
