@@ -12,4 +12,5 @@ return [
     'jobs' => 'Công việc',
     'messages' => 'Tin nhắn',
     'settings' => 'Cài đặt',
+    'search' => 'Tìm kiếm',
 ];
