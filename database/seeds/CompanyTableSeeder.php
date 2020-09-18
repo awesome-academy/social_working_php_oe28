@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Company_User;
+use Faker\Generator as Faker;
 
 class CompanyTableSeeder extends Seeder
 {
@@ -11,13 +12,18 @@ class CompanyTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         $companies = ['Apple', 'Sun', 'Vin'];
 
         foreach ($companies as $company) {
             if (!DB::table('companies')->where('name', $company)->first()) {
-                DB::table('companies')->insertGetId(['name' => $company]);
+                DB::table('companies')->insertGetId([
+                    'name' => $company,
+                    'overview' => $faker->paragraph($nbSentences = 10, $variableNbSentences = true),
+                    'establish' => 'February 12',
+                    'employees' => 123000,
+                ]);
             }
         }
 
@@ -26,7 +32,7 @@ class CompanyTableSeeder extends Seeder
         foreach ($listCompanies as $company) {
             $listUserId = [];
             for ($j = 0; $j < 15; $j++) {
-                $randomUserId = User::where('role_id', 3)->inRandomOrder()->first()->id;
+                $randomUserId = User::where('role_id', 4)->inRandomOrder()->first()->id;
                 if (!in_array($randomUserId, $listUserId)){
                     DB::table('company_user')->insert([
                         'company_id' => $company->id,

@@ -18,3 +18,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/getCompaniesFromSearch', 'searchCompanyController@getCompany');
+
+Route::get('/companyInfo/{id}', 'CompanyController@show')->name('companyInfo');
+
