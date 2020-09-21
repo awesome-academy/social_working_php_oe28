@@ -1,0 +1,9 @@
+#resultSearch {
+    border: solid 1px white;
+    background-color: pink;
+}
+
+#search {
+    padding: 10px 10px;
+    font-size: 20px;
+}

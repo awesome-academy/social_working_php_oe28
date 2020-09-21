@@ -8,7 +8,6 @@ if (btnLogout) {
 }
 
 let inputSearch = document.getElementById('inputSearchCompany');
-console.log(inputSearch);
 let resultSearch = document.getElementById('resultSearch');
 inputSearch.addEventListener('keyup', () => {
     setTimeout(() => {
@@ -23,7 +22,7 @@ inputSearch.addEventListener('keyup', () => {
                     if (inputSearch.value === '') {
                         resultSearch.innerHTML = '';
                     } else {
-                        resultSearch.innerHTML = `<a href="#">${result.name}</a>`;
+                        resultSearch.innerHTML = `<a id="search" href="${ companyInfoRoute.replace('companyId', result.id) }">${ result.name }</a>`;
                     }
                 })
             },

@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/aos/dist/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/search.css') }}">
     <title></title>
 </head>
 <body oncontextmenu="return false;" >
@@ -40,7 +41,7 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="" title="">
+                                    <a href="{{ route('home') }}" title="">
                                         <span><img src="{{ config('icon.icon1') }}" alt=""></span>
                                         {{ trans('navbar.home') }}
                                     </a>
@@ -206,9 +207,9 @@
                     </div>
                 </div>
             </header>
-            <main class="py-4">
+            <div class="py-4">
                 @yield('content')
-            </main>
+            </div>
         </div>
     </div>
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/jquery.min.js') }}"></script>
@@ -218,6 +219,9 @@
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/lib/slick/slick.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/script.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/aos/dist/aos.js') }}"></script>
+    <script>
+        const companyInfoRoute = "{{ route('companyInfo', ['id' => 'companyId']) }}";
+    </script>
 <script src="{{ asset('js/home.js') }}"></script>
 </body>
 </html>
