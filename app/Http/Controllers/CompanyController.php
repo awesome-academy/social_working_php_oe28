@@ -2,86 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Models\Company;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        $searchCompany = Company::findOrFail($id);
+        $followed = false;
+        $searchCompany = Company::with('users')->findOrFail($id);
+        if (Auth::check()) {
+            foreach ($searchCompany->users as $user) {
+                if ($user->id === Auth::id()) {
+                    $followed = true;
+                    break;
+                }
+            }
+        }
 
-        return view('companyInfo', compact('searchCompany'));
+        return view('companyInfo', compact('searchCompany', 'followed'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function follow(Request $request)
     {
-        //
-    }
+        if (Auth::check()) {
+            DB::table('company_user')->insert([
+                'company_id' => $request->get('id'),
+                'user_id' => Auth::id(),
+            ]);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            return redirect()->back();
+        } else {
+            return redirect()->route('login');
+        }
     }
 }
