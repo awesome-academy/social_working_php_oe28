@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
-use App\Models\Company_User;
 use Faker\Generator as Faker;
 
 class CompanyTableSeeder extends Seeder

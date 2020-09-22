@@ -18,7 +18,11 @@
                                         </div>
                                         <div class="user_pro_status">
                                             <ul class="flw-hr">
-                                                <li><a href="#" title="" class="flww"><i class="la la-plus"></i> {{ trans('companyInfo.follow') }}</a></li>
+                                                @if ($followed === false)
+                                                    <li><a href="{{ route('company.follow', ['id' => $searchCompany->id]) }}" title="" class="flww"><i class="la la-plus"></i> {{ trans('companyInfo.follow') }}</a></li>
+                                                    @else
+                                                        <li>{{ trans('companyInfo.following') }}</li>
+                                                @endif
                                             </ul>
                                             <ul class="flw-status">
                                                 <li>
@@ -46,7 +50,7 @@
                             <div class="col-lg-6">
                                 <div class="main-ws-sec">
                                     <div class="user-tab-sec">
-                                        <h3>{{ $company->name }}</h3>
+                                        <h3>{{ $searchCompany->name }}</h3>
                                         <div class="star-descp">
                                             <span>{{ trans('companyInfo.establish') }}</span>
                                             <ul>
@@ -77,15 +81,15 @@
                                     <div class="product-feed-tab current" id="info-dd">
                                         <div class="user-profile-ov">
                                             <h3><a href="#" title="" class="overview-open">{{ trans('companyInfo.overview') }}</a> <a href="#" title="" class="overview-open"><i class="fa fa-pencil"></i></a></h3>
-                                            <p>{{ $company->overview }}</p>
+                                            <p>{{ $searchCompany->overview }}</p>
                                         </div>
                                         <div class="user-profile-ov st2">
                                             <h3><a href="#" title="" class="esp-bx-open">{{ trans('companyInfo.since') }}</a><a href="#" title="" class="esp-bx-open"><i class="fa fa-pencil"></i></a> <a href="#" title="" class="esp-bx-open"><i class="fa fa-plus-square"></i></a></h3>
-                                            <span>{{ $company->establish }}</span>
+                                            <span>{{ $searchCompany->establish }}</span>
                                         </div>
                                         <div class="user-profile-ov">
                                             <h3><a href="#" title="" class="emp-open">{{ trans('companyInfo.total_employees') }}</a> <a href="#" title="" class="emp-open"><i class="fa fa-pencil"></i></a> <a href="#" title="" class="emp-open"><i class="fa fa-plus-square"></i></a></h3>
-                                            <span>{{ $company->employees }}</span>
+                                            <span>{{ $searchCompany->employees }}</span>
                                         </div>
                                     </div>
                                     <div class="product-feed-tab" id="portfolio-dd">

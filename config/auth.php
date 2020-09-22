@@ -113,5 +113,5 @@ return [
     */
 
     'password_timeout' => 10800,
-
+    'role_id' => 4,
 ];
