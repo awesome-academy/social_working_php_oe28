@@ -32,3 +32,7 @@ inputSearch.addEventListener('keyup', () => {
         })
     },500)
 });
+
+$(".select2").select2({
+    tags: true
+});

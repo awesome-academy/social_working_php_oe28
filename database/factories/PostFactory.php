@@ -13,8 +13,9 @@ $factory->define(Post::class, function (Faker $faker) {
     $content = $faker->paragraph($nbSentences = 10, $variableNbSentences = true);
     $user_role_id = DB::table('roles')->where('name','employer')->first()->id;
     $userIdRandom = User::where('role_id', $user_role_id)->inRandomOrder()->first()->id;
-    $priority = [1,2,3];
-    $days = [1,10,30];
+    $status = [1, 2];
+    $priority = [1, 2, 3];
+    $days = [1, 10, 30];
 
     return [
         'title' => $title,
@@ -23,5 +24,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'prices' => $priority[array_rand($priority)] * $days[array_rand($days)],
         'priority' => $priority[array_rand($priority)],
         'days' => $days[array_rand($days)],
+        'status' => $status[array_rand($status)],
     ];
 });

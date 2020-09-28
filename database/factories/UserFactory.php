@@ -14,6 +14,5 @@ $factory->define(User::class, function (Faker $faker, $role_id) {
         'password' => bcrypt(123456), // password
         'remember_token' => Str::random(10),
         'role_id' => $role_id,
-        'company_id' => Company::all()->random()->id,
     ];
 });

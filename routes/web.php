@@ -24,3 +24,5 @@ Route::get('/companyInfo/{id}', 'CompanyController@show')->name('companyInfo');
 Route::get('/follow', 'CompanyController@follow')->name('company.follow');
 
 Route::post('/registerEmployer', 'RegisterEmployer@register')->name('registerEmployer');
+
+Route::post('/createPost', 'PostController@create')->name('createPost');
