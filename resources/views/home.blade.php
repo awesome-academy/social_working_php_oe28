@@ -43,17 +43,21 @@
                         </div>
                         <div class="col-lg-6 col-md-8 no-pd">
                             <div class="main-ws-sec">
-                                <div class="post-topbar">
-                                    <div class="user-picy">
-                                        <img src="{{ config('home.user_pic') }}" alt="">
-                                    </div>
-                                    <div class="post-st">
-                                        <ul>
-                                            <li><a class="post_project" href="#" title="">{{ trans('home.post_project') }}</a></li>
-                                            <li><a class="post-jb active" href="#" title="">{{ trans('home.post_job') }}</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                    @auth
+                                        @if (Auth::user()->role_id === config('home.role_id_employer'))
+                                            <div class="post-topbar">
+                                                <div class="user-picy">
+                                                    <img src="{{ config('home.user_pic') }}" alt="">
+                                                </div>
+                                                <div class="post-st">
+                                                    <ul>
+                                                        <li><a class="post_project" href="#" title="">{{ trans('home.post_project') }}</a></li>
+                                                        <li><a class="post-jb active" href="#" title="">{{ trans('home.post_job') }}</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endauth
                                 <div class="posts-section">
                                     @foreach ($posts as $post)
                                         <div class="post-bar">

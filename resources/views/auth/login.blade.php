@@ -76,7 +76,6 @@
                                             <div class="checky-sec">
                                                 <div class="fgt-sec">
                                                     <input id="c1" class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
                                                     <label for="c1">
                                                         <span></span>
                                                     </label>
@@ -103,7 +102,7 @@
                             <div class="sign_in_sec" id="tab-2">
                                 <div class="signup-tab">
                                     <i class="fa fa-long-arrow-left"></i>
-                                    <h2>johndoe@example.com</h2>
+                                    <h2>{{ config('login.email_example') }}</h2>
                                     <ul>
                                         <li data-tab="tab-3" class="current"><a href="#" title="">{{ trans('signin.user') }}</a></li>
                                         <li data-tab="tab-4"><a href="#" title="">{{ trans('signin.company') }}</a></li>
@@ -188,6 +187,47 @@
                                                         autocomplete="new-password"
                                                         placeholder="{{ trans('signin.repeat_password') }}"
                                                     >
+                                                    <i class="la la-lock"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <button type="submit" value="submit">{{ trans('signin.get_started') }}</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="dff-tab" id="tab-4">
+                                    <form method="POST" action="{{ route('registerEmployer') }}">
+                                        @csrf
+
+                                        <div class="row">
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="text" name="company_name" placeholder="{{ trans('signin.company_name') }}">
+                                                    <i class="la la-building"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="email" name="email" placeholder="{{ trans('signin.email') }}">
+                                                    <i class="la la-globe"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="text" name="name" placeholder="{{ trans('signin.name') }}">
+                                                    <i class="la la-globe"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="password" name="password" placeholder="{{ trans('signin.password') }}">
+                                                    <i class="la la-lock"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="password" name="repeat_password" placeholder="{{ trans('signin.repeat_password') }}">
                                                     <i class="la la-lock"></i>
                                                 </div>
                                             </div>

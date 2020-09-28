@@ -9,4 +9,5 @@ return [
     'minute' => '3 minutes ago',
     'liked' => '/bower_components/demo-bower/assets/images/liked-img.png',
     'wd_logo' => '/bower_components/demo-bower/assets/images/wd-logo.png',
+    'role_id_employer' => 2,
 ];
