@@ -13,4 +13,6 @@ return [
     'email' => 'Email',
     'repeat_password' => 'Repeat password',
     'user_name' => 'User name',
+    'company_name' => 'Company name',
+    'name' => 'Name',
 ];

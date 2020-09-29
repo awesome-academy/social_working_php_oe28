@@ -16,6 +16,4 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.js('resources/js/home.js', 'public/js');
 
-mix.js('resources/js/follow.js', 'public/js');
-
 mix.styles('resources/sass/search.css', 'public/css/search.css');

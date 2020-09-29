@@ -13,4 +13,6 @@ return [
     'email' => 'Email',
     'repeat_password' => 'Đặt lại mật khẩu',
     'user_name' => 'Tên hiển thị',
+    'company_name' => 'Company name',
+    'name' => 'Name',
 ];
