@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "demo-bower": "https://github.com/LinhHoang1110/demo_bower.git"
+    "demo-bower": "https://github.com/LinhHoang1110/demo_bower.git",
+    "bower-assets-admin": "https://github.com/LinhHoang1110/admin-template-socialWorking.git"
   }
 }

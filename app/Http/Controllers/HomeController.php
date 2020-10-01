@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
@@ -29,5 +30,11 @@ class HomeController extends Controller
         $tags = Tag::all();
 
         return view('home', compact('posts', 'tags'));
+    }
+
+    public function adminHome() {
+        $postsPending = Post::with('user')->where('status', config('home.pending_status'))->get();
+
+        return view('admin.pendingPosts', compact('postsPending'));
     }
 }

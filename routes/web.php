@@ -26,3 +26,7 @@ Route::get('/follow', 'CompanyController@follow')->name('company.follow');
 Route::post('/registerEmployer', 'RegisterEmployer@register')->name('registerEmployer');
 
 Route::post('/createPost', 'PostController@create')->name('createPost');
+
+Route::get('/dashboard/pendingPosts', 'HomeController@adminHome')->name('pendingPosts')->middleware('check_admin');
+
+Route::get('/aprrovePost', 'PostController@aprrovePost')->name('aprrovePost')->middleware('check_admin');
