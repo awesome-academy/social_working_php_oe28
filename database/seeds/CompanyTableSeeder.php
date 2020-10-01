@@ -31,7 +31,7 @@ class CompanyTableSeeder extends Seeder
         foreach ($listCompanies as $company) {
             $listUserId = [];
             for ($j = 0; $j < 15; $j++) {
-                $randomUserId = User::where('role_id', 4)->inRandomOrder()->first()->id;
+                $randomUserId = User::where('role_id', 1)->inRandomOrder()->first()->id;
                 if (!in_array($randomUserId, $listUserId)){
                     DB::table('company_user')->insert([
                         'company_id' => $company->id,

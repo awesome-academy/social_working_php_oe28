@@ -22,4 +22,8 @@ return [
     'career' => 'Career',
     'language' => 'Language',
     'copyright_policy' => 'Copyright Policy',
+    'title' => 'Title',
+    'content' => 'Content',
+    'post' => 'Post',
+    'cancel' => 'Cancel',
 ];

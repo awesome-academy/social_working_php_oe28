@@ -22,4 +22,8 @@ return [
     'career' => 'Nghề nghiệp',
     'language' => 'Ngôn ngữ',
     'copyright_policy' => 'Copyright Policy',
+    'title' => 'Tiêu đề',
+    'content' => 'Nội dung',
+    'post' => 'Đăng bài',
+    'cancel' => 'Huỷ',
 ];

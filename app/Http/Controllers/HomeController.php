@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::all()->load('tags');
+        $tags = Tag::all();
 
-        return view('home', ['posts' => $posts]);
+        return view('home', compact('posts', 'tags'));
     }
 }

@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('bower_components/demo-bower/assets/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/aos/dist/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/select2/dist/css/select2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/search.css') }}">
     <title></title>
 </head>
@@ -208,7 +209,10 @@
                 </div>
             </header>
             <div class="py-4">
-                @yield('content')
+                <div class="wrapper">
+                    @yield('content')
+                </div>
+
             </div>
         </div>
     </div>
@@ -217,8 +221,10 @@
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/flatpickr.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/lib/slick/slick.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/lib/js/jquery.mCustomScrollbar.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/demo-bower/assets/js/script.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bower_components/aos/dist/aos.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bower_components/select2/dist/js/select2.js') }}"></script>
     <script>
         const companyInfoRoute = "{{ route('companyInfo', ['id' => 'companyId']) }}";
     </script>
