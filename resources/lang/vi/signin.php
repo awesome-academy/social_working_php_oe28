@@ -15,4 +15,5 @@ return [
     'user_name' => 'Tên hiển thị',
     'company_name' => 'Company name',
     'name' => 'Name',
+    'warning_login_user' => 'Hiện tại bạn chưa thể đăng nhập, Hãy đợi đến khi quản trị viên của chúng tôi chập thuận',
 ];

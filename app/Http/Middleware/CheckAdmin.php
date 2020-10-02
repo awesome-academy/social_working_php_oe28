@@ -16,7 +16,7 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::check() || Auth::user()->role_id !== config('controller.admin')) {
+        if (!Auth::check() || Auth::user()->role_id !== config('controller.role.admin')) {
             abort(403);
         }
 

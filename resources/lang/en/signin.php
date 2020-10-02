@@ -15,4 +15,5 @@ return [
     'user_name' => 'User name',
     'company_name' => 'Company name',
     'name' => 'Name',
+    'warning_login_user' => 'You can not login now, Please wait until our admin accept!!'
 ];
