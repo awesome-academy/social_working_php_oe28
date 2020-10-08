@@ -18,13 +18,14 @@ inputSearch.addEventListener('keyup', () => {
                 data : inputSearch.value,
             },
             success: function (data) {
-                data.map(result => {
-                    if (inputSearch.value === '') {
-                        resultSearch.innerHTML = '';
-                    } else {
-                        resultSearch.innerHTML = `<a id="search" href="${ companyInfoRoute.replace('companyId', result.id) }">${ result.name }</a>`;
-                    }
-                })
+                if (inputSearch.value === '') {
+                    resultSearch.innerHTML = '';
+                } else {
+                    let newData = data.map(result => {
+                        return `<div><a id="search" href="${ companyInfoRoute.replace('companyId', result.id) }">${ result.name }</a></div>`
+                    });
+                    resultSearch.innerHTML = newData.join('');
+                }
             },
             error: function (err) {
                 //

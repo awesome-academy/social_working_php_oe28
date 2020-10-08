@@ -37,7 +37,9 @@
                                 <input id="inputSearchCompany" type="text" name="search" placeholder="{{ trans('navbar.search') }}...">
                                 <button type="submit"><i class="la la-search"></i></button>
                             </form>
-                            <div id="resultSearch"></div>
+                            <div id="resultSearch">
+
+                            </div>
                         </div>
                         <nav>
                             <ul>
