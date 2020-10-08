@@ -19,7 +19,9 @@ class RegisterEmployer extends Controller
                 'password' => Hash::make($request->get('password')),
                 'role_id' => config('home.role_id_employer'),
                 'company_id' => $companyId,
+                'status' => config('controller.status.pending'),
             ]);
+            alert()->warning('WarningAlert', trans('signin.warning_login_user'));
 
             return redirect('login');
         } else {
@@ -34,7 +36,9 @@ class RegisterEmployer extends Controller
                 'password' => Hash::make($request->get('password')),
                 'role_id' => config('home.role_id_employer'),
                 'company_id' => $newCompanyId,
+                'status' => config('controller.status.pending'),
             ]);
+            alert()->warning('WarningAlert', trans('signin.warning_login_user'));
 
             return redirect('login');
         }

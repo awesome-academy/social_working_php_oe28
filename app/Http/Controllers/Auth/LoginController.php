@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -42,11 +43,17 @@ class LoginController extends Controller
 
     public function authenticated(Request $request, $user)
     {
-        if ($user->role_id === config('controller.admin')) {
+        if ($user->status !== config('controller.status.active')) {
+            Auth::logout();
+            alert()->warning('WarningAlert', trans('signin.warning_login_user'));
 
-            return redirect(route('aprrovePost'));
+            return redirect()->route('login');
+        } else {
+            if ($user->role_id === config('controller.role.admin')) {
+                return redirect()->route('pendingPosts');
+            }
+
+            return redirect()->route('home');
         }
-
-        return redirect(route('home'));
     }
 }

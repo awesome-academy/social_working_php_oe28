@@ -33,7 +33,7 @@ class PostController extends Controller
     }
 
     public function aprrovePost(Request $request) {
-        DB::table('posts')->where('id', $request->get('id'))->update(['status' => config('controller.done_status')]);
+        DB::table('posts')->where('id', $request->get('id'))->update(['status' => config('controller.status.active')]);
 
         return redirect()->route('pendingPosts');
     }

@@ -20,10 +20,8 @@
 
 
 <body class="sign-in" oncontextmenu="return false;">
-
-
+@include('sweetalert::alert')
 <div class="wrapper">
-
     <div class="sign-in-page">
         <div class="signin-popup">
             <div class="signin-pop">

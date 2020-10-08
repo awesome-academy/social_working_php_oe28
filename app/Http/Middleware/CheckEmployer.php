@@ -15,7 +15,7 @@ class CheckEmployer
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::check() || Auth::user()->role->name !== config('controller.employer')) {
+        if (!Auth::check() || Auth::user()->role->name !== config('controller.role.employer')) {
             abort(403);
         }
 

@@ -17,6 +17,7 @@ class User extends Model implements Authenticatable
         'email',
         'password',
         'role_id',
+        'status',
     ];
 
     protected $attributes = [

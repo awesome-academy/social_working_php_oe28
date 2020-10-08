@@ -59,7 +59,7 @@
                                     @endauth
                                 <div class="posts-section">
                                     @foreach ($posts as $post)
-                                        @if ($post->status !== config('home.pending'))
+                                        @if ($post->status !== config('home.pending_status'))
                                             <div class="post-bar">
                                                 <div class="post_topbar">
                                                     <div class="usy-dt">

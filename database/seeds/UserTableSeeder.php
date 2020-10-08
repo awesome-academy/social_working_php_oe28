@@ -19,6 +19,7 @@ class UserTableSeeder extends Seeder
             'email' => 'linhdz6@gmail.com',
             'password' => bcrypt('123456'),
             'role_id' => $admin_role_id,
+            'status' => config('controller.status.active'),
         ]);
 
         $user_role_id = DB::table('roles')->where('name', 'user')->first()->id;
