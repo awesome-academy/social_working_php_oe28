@@ -30,7 +30,7 @@
                 <div class="container">
                     <div class="header-data">
                         <div class="logo">
-                            <a href="" title=""><img src="{{ config('icon.logo') }}" alt=""></a>
+                            <a href="{{ route('home') }}" title=""><img src="{{ config('icon.logo') }}" alt=""></a>
                         </div>
                         <div class="search-bar">
                             <form>
@@ -230,6 +230,6 @@
     <script>
         const companyInfoRoute = "{{ route('companyInfo', ['id' => 'companyId']) }}";
     </script>
-<script src="{{ asset('js/home.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/home.js') }}"></script>
 </body>
 </html>

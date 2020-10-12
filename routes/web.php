@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Middleware\CheckAdmin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +27,14 @@ Route::post('/registerEmployer', 'RegisterEmployer@register')->name('registerEmp
 
 Route::post('/createPost', 'PostController@create')->name('createPost');
 
-Route::get('/dashboard/pendingPosts', 'HomeController@adminHome')->name('pendingPosts')->middleware('check_admin');
+Route::middleware([CheckAdmin::class])->group(function () {
+    Route::get('/dashboard/pendingPosts', 'HomeController@adminHome')->name('pendingPosts');
 
-Route::get('/aprrovePost', 'PostController@aprrovePost')->name('aprrovePost')->middleware('check_admin');
+    Route::get('/aprrovePost', 'PostController@aprrovePost')->name('aprrovePost');
+
+    Route::get('/userManagement', 'UserController@show')->name('userManagement');
+
+    Route::get('/changeUserStatus', 'UserController@changeUserStatus')->name('changeUserStatus');
+
+    Route::get('/resetPassword', 'UserController@resetPassword')->name('resetPassword');
+});

@@ -18,4 +18,6 @@ mix.js('resources/js/home.js', 'public/js');
 
 mix.js('resources/js/homeAdmin.js', 'public/js');
 
+mix.js('resources/js/user_management.js', 'public/js');
+
 mix.styles('resources/sass/search.css', 'public/css/search.css');
