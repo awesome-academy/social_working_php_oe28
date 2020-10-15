@@ -11,4 +11,5 @@ return [
         'employer' => 2,
         'admin' => 3,
     ],
+    'paginate' => 15,
 ];

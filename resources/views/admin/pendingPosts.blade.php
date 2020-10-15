@@ -22,3 +22,6 @@
         </tbody>
     </table>
 @endsection
+@push('after-js')
+    <script src="{{ asset('js/homeAdmin.js') }}"></script>
+@endpush

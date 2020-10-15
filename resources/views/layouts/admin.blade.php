@@ -73,8 +73,11 @@
                             <ul class="menu">
 
                                 <li class="active">
-                                    <a href="index-2.html">
+                                    <a href="{{ route('pendingPosts') }}">
                                         <i class="fa fa-pencil"></i> {{ trans('adminApp.post') }} <b class="fa fa-plus dropdown-plus"></b>
+                                    </a>
+                                    <a href="{{ route('userManagement') }}">
+                                        <i class="fa fa-user"></i> {{ trans('adminApp.user') }} <b class="fa fa-plus dropdown-plus"></b>
                                     </a>
                                 </li>
                             </ul>
@@ -122,7 +125,7 @@
     <script src="{{ asset('/bower_components/bower-assets-admin/js/vendor/summernote/summernote.min.js') }}"></script>
     <script src="{{ asset('/bower_components/bower-assets-admin/js/vendor/chosen/chosen.jquery.min.js') }}"></script>
     <script src="{{ asset('/bower_components/bower-assets-admin/js/minimal.min.js') }}"></script>
-    <script src="{{ asset('js/homeAdmin.js') }}"></script>
+    @stack('after-js')
 </body>
 </html>
 
